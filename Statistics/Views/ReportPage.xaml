@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Statistics.Views.ReportPage">
+    <ContentPage.ToolbarItems >
+        <ToolbarItem IconImageSource="plus.png"  Clicked="AddButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Frame BackgroundColor="Blue" Margin="5" CornerRadius="15">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="Coins.png" WidthRequest="100" HorizontalOptions="Start"></Image>
+                <Label Text="Ваш баланс:" VerticalOptions="Center" Margin="10, 0, 0, 0" TextColor="White" FontSize="20"></Label>
+                <Label x:Name="Balance" VerticalOptions="Center"  Margin="5, 0" Text="0" TextColor="White" FontSize="20"></Label>
+            </StackLayout>
+        </Frame>
+        <Grid  Margin="20" HeightRequest="200" ColumnDefinitions="*,*,*">
+            <Button Grid.Column="0" x:Name="OrderButton" Clicked="OrderButton_Clicked" FontSize="18" CornerRadius="10" Text="Порядок"></Button>
+            <Button Grid.Column="1" x:Name="DateButton" Clicked="OrderButton_Clicked" FontSize="18" CornerRadius="10" Text="Дата"></Button>
+            <Button Grid.Column="2" x:Name="SumButton" Clicked="OrderButton_Clicked" FontSize="18" CornerRadius="10" Text="Сумма"></Button>
+        </Grid>
+        <CollectionView x:Name="plusCollectionView"
+                    SelectionChanged="OnSelectionChanged"
+                    SelectionMode="Single"
+                        Margin="20, 0">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Background="Green" Padding="0" CornerRadius="20" Margin="20">
+                        <StackLayout Padding="30, 10, 30, -10">
+                            <Label  FontSize="48" Text="{Binding Summ}"></Label>
+                            <Label FontSize="Large" Text="{Binding Category}"></Label>
+                            <Label FontSize="Large" Text="{Binding Description}"></Label>
+                            <Label Text="{Binding Date}"></Label>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <CollectionView x:Name="minusCollectionView"
+                    SelectionChanged="OnSelectionChanged"
+                    SelectionMode="Single"
+                        Margin="20, 0">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame  Background="Red" Padding="0" CornerRadius="20" Margin="20">
+
+                        <StackLayout Padding="30, 10, 30, -10">
+                            <Label FontSize="48" Text="{Binding Summ}"></Label>
+                            <Label FontSize="Large" Text="{Binding Category}"></Label>
+                            <Label FontSize="Large" Text="{Binding Description}"></Label>
+                            <Label Text="{Binding Date}"></Label>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+    
+</ContentPage>

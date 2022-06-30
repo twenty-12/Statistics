@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Statistics.Views.AddCategory">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Категория:" FontSize="21" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                <Editor Grid.Column="1" Placeholder="Ваша категория" Text="{Binding Category}"></Editor>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="Oper" Margin="10, 0, 0, 0" FontSize="24" VerticalOptions="Center" Text="Operation:" TextColor="Black"></Label>
+                <Button x:Name="Changed"  FontSize="Large" Grid.Column="1" Text="{Binding Operations}" Clicked="OperationButton_Clicked" BackgroundColor="Green" TextColor="White" CornerRadius="10" Margin="5"/>
+            </Grid>
+            <Button Text="Сохранить" FontSize="24" Margin="30, 10" Clicked="SaveButton_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Statistics.Views.ReportAddingPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame CornerRadius="10" Padding="0" Margin="20"
+                    BackgroundColor="LightGray">
+                    <Editor Placeholder="Time"
+                    Text="{Binding Date}"
+                    TextColor="Black"
+                    HeightRequest="100">
+                    </Editor>
+                </Frame>
+                <Frame CornerRadius="10" Padding="0" Margin="20"
+                    BackgroundColor="LightGray">
+                    <!--<Editor Placeholder="Category"
+                    Text="{Binding Category}"
+                    TextColor="Black"
+                    HeightRequest="100">
+                    </Editor>-->
+                    <Grid ColumnDefinitions="*, 3*">
+                        <Label Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" x:Name="CategoryViewLabel" Text="Категория:"></Label>
+                        <Picker Grid.Column="1" x:Name="SelectPicker" SelectedIndexChanged="CategorySelected"></Picker>
+                    </Grid>
+                </Frame>
+                <Frame CornerRadius="10" Padding="0" Margin="20"
+                    BackgroundColor="LightGray">
+                    <Editor Placeholder="Summ"
+                    Text="{Binding Summ}"
+                    TextColor="Black"
+                    HeightRequest="100">
+                    </Editor>
+                </Frame>
+                <Frame CornerRadius="10" Padding="0" Margin="20"
+                    BackgroundColor="LightGray">
+                    <Editor Placeholder="Description"
+                    Text="{Binding Description}"
+                    TextColor="Black"
+                    HeightRequest="100">
+                    </Editor>
+                </Frame>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="Oper" Margin="10, 0, 0, 0" FontSize="24" VerticalOptions="Center" Text="Operation:" TextColor="Black"></Label>
+                    <Button x:Name="Changed"  FontSize="Large" Grid.Column="1" Text="{Binding Operation}" Clicked="OperationButton_Clicked" CornerRadius="10" Margin="5"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" FontSize="28" CornerRadius="10" Margin="10" Text="Save" Clicked="SaveButton_Clicked"/>
+                    <Button Grid.Column="1" FontSize="28" CornerRadius="10" Margin="10" Text="Delete" Clicked="DeleteButton_Clicked"/>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
