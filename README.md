@@ -8,16 +8,3 @@
 ### Стек технологий:
 - Xamarin Forms
 - SQLite
-
----
-___Основная страница___
-<a href="https://ibb.co/B2CTxX4"><img src="https://i.ibb.co/VYqMZ7H/Screenshot-20220701-030749.jpg" alt="Screenshot-20220701-030749" border="0" /></a>
-
-___Добавление дохода___
-<a href="https://ibb.co/xHrZy6D"><img src="https://i.ibb.co/8cQkJ90/Screenshot-20220701-030837.jpg" alt="Screenshot-20220701-030837" border="0" /></a>
-
-___Добавление расхода___
-<a href="https://ibb.co/bQF0fwY"><img src="https://i.ibb.co/0mK7w41/Screenshot-20220701-030910.jpg" alt="Screenshot-20220701-030910" border="0" /></a>
-
-___Окно редактирования___
-<a href="https://ibb.co/kc7GgQb"><img src="https://i.ibb.co/MNvgDMw/Screenshot-20220701-030945.jpg" alt="Screenshot-20220701-030945" border="0" /></a>
